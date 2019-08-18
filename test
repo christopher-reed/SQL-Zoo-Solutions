@@ -1,3 +1,5 @@
+/*
 Show the year, subject, and name of Physics winners for 1980 together with the Chemistry winners for 1984.
+\*
 SELECT matchid, player FROM goal
 WHERE teamid = 'GER'
