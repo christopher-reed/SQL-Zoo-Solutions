@@ -1,5 +1,5 @@
 # More JOIN operations
-## UPDATED: 9 OCT 2020
+## UPDATED: 30 DEC 2020
 
 **1. List the films where the yr is 1962** 
 ~~~sql
@@ -112,3 +112,24 @@ GROUP BY name
 HAVING COUNT(movieid) >= 15
 ORDER BY name
 ~~~
+
+**14. List the films released in the year 1978 ordered by the number of actors in the cast, then by title.** 
+~~~sql
+SELECT movie.title, COUNT(casting.actorid)
+FROM movie JOIN casting ON movie.id = casting.movieid
+WHERE movie.yr = 1978
+GROUP BY movie.title
+ORDER BY COUNT(casting.actorid) DESC, movie.title
+~~~
+
+**15. List all the people who have worked with 'Art Garfunkel'.** 
+~~~sql
+SELECT actor.name
+FROM casting JOIN actor ON casting.actorid = actor.id
+WHERE movieid IN (
+                  SELECT casting.movieid
+                  FROM casting JOIN actor ON casting.actorid = actor.id
+                  WHERE actor.name = 'Art Garfunkel')
+AND actor.name != 'Art Garfunkel'
+~~~
+
