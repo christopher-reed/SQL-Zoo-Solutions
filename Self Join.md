@@ -1,7 +1,7 @@
 # Self Join
 ## Updated: 2 Jan 2021
 
-**1. How many stops are in the database. **
+**1. How many stops are in the database.**
 ~~~sql
 SELECT COUNT(DISTINCT id)
 FROM stops
@@ -41,7 +41,7 @@ WHERE a.stop=53
 AND b.stop = 149
 ~~~
 
-**6. Give the id and the name for the stops on the '4' 'LRT' service. **
+**6. Give the id and the name for the stops on the '4' 'LRT' service.**
 ~~~sql
 SELECT id, name
 FROM stops
