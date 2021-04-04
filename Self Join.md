@@ -14,7 +14,7 @@ FROM stops
 WHERE name = 'Craiglockhart'
 ~~~
 
-**3. Give the id and the name for the stops on the '4' 'LRT' service. **
+**3. Give the id and the name for the stops on the '4' 'LRT' service.**
 ~~~sql
 SELECT id, name
 FROM stops
